@@ -3,6 +3,7 @@ name_true1 = False
 char = []
 do_you_want_continue = True
 do_you_want_continue_user = "n"
+continue_usre = True
 print("Hello ! Welcom to Mehrshad's phonebook . please enter the following information.")
 while do_you_want_continue == True :
     contact = Phone(name=input(f"enter your name : "), family=input("enter your family : "), telphon=input("enter your telphon number :"), mobile_1=input("entre your 1st mobile number : "), mobile_2=input(
@@ -128,13 +129,17 @@ while do_you_want_continue == True :
       contact.Mobile_3, contact.Address, contact.postal_code, contact.gender, file=file_1)
     file_1.close()
 
-    do_you_want_continue_user = input("Do you want continue ?(y or n) ").lower()
-    if do_you_want_continue_user == 'y' :
-        do_you_want_continue = True
-    elif do_you_want_continue_user =='n' :
-        do_you_want_continue_user = False
-    else :
-        do_you_want_continue_user = input("Do you want continue ?(y or n)")
+    # user can choose continue or no
+    while continue_usre == True:
+        do_you_want_continue_user = input("Do you want continue ?(y or n) ").lower()
+        if do_you_want_continue_user == 'y' :
+            do_you_want_continue = True
+            continue_usre = False
+        elif do_you_want_continue_user =='n' :
+            do_you_want_continue_user = False
+            continue_usre = False
+        else :
+            continue_usre = True
 
 
 
