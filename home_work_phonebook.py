@@ -9,6 +9,8 @@ class Phone:
         self.Address = address
         self.postal_code = postal_code
         self.gender = gender
+
+    # check name alphabetic
     def name(self):
         corect = False
         for i in range(len(self.Name)):
@@ -18,6 +20,8 @@ class Phone:
                 corect =  False
                 break
         return corect  
+
+    # check family alphabetic
     def family(self):
         corect = False
         for i in range(len(self.Family)):
@@ -27,7 +31,8 @@ class Phone:
                 corect =  False
                 break
         return corect   
-       
+
+    # check just insert number 
     def telphon_just_num(self):
         corect = False
         for i in range(len(self.Telphon)):
@@ -40,6 +45,8 @@ class Phone:
            except :
                corect = False
         return corect  
+
+    # check telphon len
     def telphon_len(self):
         mode = None
         if (len(self.Telphon)) == 8 :
@@ -51,8 +58,8 @@ class Phone:
         else :
             mode = 3
         return mode
-        
-        
+
+    # check mobile 1 just number
     def mobile_just_num(self):
         corect = False
         try :
@@ -66,7 +73,7 @@ class Phone:
             corect = False 
         return corect
     
-    
+    # check mobile 1 len
     def mobile_1_need(self):
         if len(self.Mobile_1) == 12 :
             return 1
@@ -74,7 +81,8 @@ class Phone:
             return 2
         else :
             return 3
-        
+
+    # check mobile 2 just number
     def mobile_2_just_num_or_not(self):
         corect = False
         try :
@@ -90,6 +98,8 @@ class Phone:
         except :
             corect =False
         return corect 
+
+    # check mobile 3 just number
     def mobile_3_just_num_or_not(self):
         corect = False    
         try :
@@ -105,7 +115,8 @@ class Phone:
         except :
             corect = False
         return corect
-    
+        
+    # check mobile 2 len
     def mobile_2_need(self):
         mood2= None
         if len(self.Mobile_2) == 12 :
@@ -117,6 +128,8 @@ class Phone:
         else :  
             mood2 = 3
         return mood2
+
+    # check mobile 3 len
     def mobile_3_need(self):
         mood3 = None
         if len(self.Mobile_3) == 12 :
@@ -128,6 +141,8 @@ class Phone:
         else :  
             mood3 = 3    
         return mood3
+
+    # check address chars
     def addres_check(self):
         corect = False
         for i in range(len(self.Address)):
@@ -139,7 +154,9 @@ class Phone:
                     break
             except : 
                 corect = False    
-            return corect  
+            return corect
+
+    # check postal_code just number
     def postal_code_number_check(self):
         corect = False
         try :
@@ -152,11 +169,15 @@ class Phone:
         except :
             corect = False 
         return corect
+
+    # check postal_code len
     def postal_code_digit(self):
         if len(self.postal_code) == 10 :
             return True
         else:
             return False
+
+    # check gender
     def gender_check(self):
         mood = (self.gender).lower()  
         if mood == "male" or mood =='m' :
